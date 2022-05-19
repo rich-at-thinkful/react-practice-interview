@@ -9,8 +9,11 @@
 
 ### Instructions
 
-This is an empty React project generated from `create-react-app`. You are required to perform the following tasks:
+This is an empty React project generated from `create-react-app`. 
 
-1. Upon first loading the App, a `fetch` call should be made to `https://jsonplaceholder.typicode.com/users`
-1. The data response should be placed into a state variable living in the `App` component
-1. The 
+To complete this assignment, your app will need to achieve the following:
+
+1. Upon first loading, it will display a list of usernames retrieved from an API, with a button labeled "Show Todos"
+1. When the user clicks on a "Show Todos" button for a specific user, it will add a list of Todos to the display. This will require a second API call for the Todos.
+1. A button labeled "Toggle filter" will toggle between showing only incomplete todos and showing ALL todos.
+1. When the Todos first load, they will default to showing ONLY incomplete todos.

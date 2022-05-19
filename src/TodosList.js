@@ -16,12 +16,14 @@ export default function TodosList({ userId }) {
 
   return (
     <section>
-      <h3>Todos</h3>
-      <p>{showAll ? "Showing All Todos" : "Showing Incomplete Todos"}</p>
-      <button type="button" onClick={() => setShowAll(!showAll)}>Toggle filter</button>
-      <ul>
+      <h3 className="px-2">Todos</h3>
+      <section className="my-2">
+        <p><em>{showAll ? "Showing All Todos" : "Showing Incomplete Todos"}</em></p>
+        <button className="btn btn-primary" type="button" onClick={() => setShowAll(!showAll)}>Toggle filter</button>
+      </section>
+      <ul className="list-group">
         {filteredTodos.map(todo =>
-          <li key={todo.id}>
+          <li className="list-group-item" key={todo.id}>
             <p>
               {todo.title}
             </p>

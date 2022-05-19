@@ -1,7 +1,6 @@
 import { render, waitFor, fireEvent, screen } from '@testing-library/react';
 import TodosList from './TodosList';
 import todosFixtures from "./todos-fixtures";
-import usersFixtures from "./users-fixtures";
 
 afterEach(() => {
   jest.clearAllMocks();

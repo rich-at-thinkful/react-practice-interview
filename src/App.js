@@ -16,19 +16,26 @@ function App() {
 
   return (
     <div className="App">
-      <section>
-        <h3>Users</h3>
-        <ul>
-          {users.map(user =>
-            <li key={user.id}>
-              <p>{user.username}</p>
-              <button type="button" onClick={() => setCurrentUserId(user.id)}>Show Todos</button>
-            </li>
-          )}
-        </ul>
-      </section>
-
-      {currentUserId && <TodosList userId={currentUserId} />}
+      <div className="row">
+        <div className="col-3 p-3">
+          <section>
+            <header>
+              <h3 className="px-2">Users</h3>
+            </header>
+            <ul className="list-group">
+              {users.map(user =>
+                <li className="list-group-item" key={user.id}>
+                  <p>{user.username}</p>
+                  <button className="btn btn-sm btn-info" type="button" onClick={() => setCurrentUserId(user.id)}>Show Todos</button>
+                </li>
+              )}
+            </ul>
+          </section>
+        </div>
+        <div className="col-9 p-3">
+          {currentUserId && <TodosList userId={currentUserId} />}
+        </div>
+      </div>
     </div>
   );
 }
