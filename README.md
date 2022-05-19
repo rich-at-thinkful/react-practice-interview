@@ -17,3 +17,5 @@ To complete this assignment, your app will need to achieve the following:
 1. When the user clicks on a "Show Todos" button for a specific user, it will add a list of Todos to the display. This will require a second API call for the Todos.
 1. A button labeled "Toggle filter" will toggle between showing only incomplete todos and showing ALL todos.
 1. When the Todos first load, they will default to showing ONLY incomplete todos.
+
+![Mock](mock-wire.png "Mock wireframe")
