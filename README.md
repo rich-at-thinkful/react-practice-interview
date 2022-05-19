@@ -18,4 +18,25 @@ To complete this assignment, your app will need to achieve the following:
 1. A button labeled "Toggle filter" will toggle between showing only incomplete todos and showing ALL todos.
 1. When the Todos first load, they will default to showing ONLY incomplete todos.
 
+You will be required to follow the specific tasks below to make the tests pass.
+
+### Mock wireframe
+
 ![Mock](mock-wire.png "Mock wireframe")
+
+### Specific Tasks
+
+If in doubt about a task, read the `App.test.js` and `TodosList.test.js` to 
+1. Inside the App component, create two state variables: `users` and `currentUserId`
+  - `users` is an Array that should be retrieved from the API at `https://jsonplaceholder.typicode.com/users` when the App component loads
+  - `currentUserId` is a Number that starts as `null` and should change when a username is clicked
+1. Each user should generate a `li` component that contains:
+  - the username
+  - a button with the label "Show Todos"
+  - when clicked, the button will change the `currentUserId`
+1. When a `currentUserId` exists (not `null`), a `TodosList` component should render inside the App component
+1. When mounted, the `TodosList` component should fetch the todos for the currently selected user at `https://jsonplaceholder.typicode.com/users/{userId}/todos`. It should update whenever the `currentUserId` changes.
+1. The `TodosList` component should display ONLY the incomplete todos when it first loads
+1. Each todo should generate a `li` component that contains the `todo.title`
+1. The `TodosList` component should contain a button at the top with the label `Toggle filter`
+  - when clicked, the list of Todos should toggle between ALL todos and only incomplete Todos
