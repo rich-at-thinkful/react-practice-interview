@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Practice Mock Interview for Frontend - Thinkful
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Installation
 
-## Available Scripts
+* Clone or download this repo to your local machine
+* Run `npm install` in the project folder
+* Run `npm test` to see the required tests
+* Run `npm start` to start the app
 
-In the project directory, you can run:
+### Instructions
 
-### `npm start`
+This is an empty React project generated from `create-react-app`. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To complete this assignment, your app will need to achieve the following:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Upon first loading, it will display a list of usernames retrieved from an API, with a button labeled "Show Todos"
+1. When the user clicks on a "Show Todos" button for a specific user, it will add a list of Todos to the display. This will require a second API call for the Todos.
+1. A button labeled "Toggle filter" will toggle between showing only incomplete todos and showing ALL todos.
+1. When the Todos first load, they will default to showing ONLY incomplete todos.
 
-### `npm test`
+You will be required to follow the specific tasks below to make the tests pass.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Mock wireframe
 
-### `npm run build`
+This wireframe is just meant as a visual guide. No styling or layout is required to make the tests pass, only the existence of the correct elements and content.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Mock](mock-wire.png "Mock wireframe")
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Specific Tasks
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If in doubt about a task, read the `App.test.js` and `TodosList.test.js` to understand what's required to pass.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Inside the App component, create two state variables: `users` and `currentUser`
+    - `users` is an Array that should be retrieved from the API at `https://jsonplaceholder.typicode.com/users` when the App component loads
+    - `currentUser` is an Object that starts as `null` and should change to a valid User object when a username is clicked
+1. Each user in `users` should generate a `li` component that contains:
+    - the username
+    - a button with the label "Show Todos"
+    - when clicked, the button will change the `currentUser`
+1. When a `currentUser` exists (not `null`), a `TodosList` component should render inside the App component. Otherwise, the `TodosList` component should not render at all.
+1. When mounted, the `TodosList` component should fetch the todos for the currently selected user at `https://jsonplaceholder.typicode.com/users/{userId}/todos`. It should update whenever the `currentUser` changes. You will want to pass the `currentUser` into `TodosList` as a prop.
+1. When it first loads, the `TodosList` component should display ONLY the incomplete todos
+1. Each todo should generate a `li` component that contains the `todo.title`
+1. At the top of the `TodosList` component, there should be
+    - an `h3` element containing text "{username}'s Todos"
+    - a `p` element containing text "Showing {incomplete or all} Todos"
+    - a button with the label "Toggle filter"
+ 1. When the button is clicked, the list of Todos should change between ALL todos and ONLY INCOMPLETE Todos
