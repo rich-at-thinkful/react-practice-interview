@@ -35,9 +35,11 @@ If in doubt about a task, read the `App.test.js` and `TodosList.test.js` to unde
     - the username
     - a button with the label "Show Todos"
     - when clicked, the button will change the `currentUserId`
-1. When a `currentUserId` exists (not `null`), a `TodosList` component should render inside the App component
-1. When mounted, the `TodosList` component should fetch the todos for the currently selected user at `https://jsonplaceholder.typicode.com/users/{userId}/todos`. It should update whenever the `currentUserId` changes.
+1. When a `currentUserId` exists (not `null`), a `TodosList` component should render inside the App component. Otherwise, the `TodosList` component should not render at all.
+1. When mounted, the `TodosList` component should fetch the todos for the currently selected user at `https://jsonplaceholder.typicode.com/users/{userId}/todos`. It should update whenever the `currentUserId` changes. You will want to pass the `currentUserId` into the component as a prop.
 1. The `TodosList` component should display ONLY the incomplete todos when it first loads
 1. Each todo should generate a `li` component that contains the `todo.title`
-1. The `TodosList` component should contain a button at the top with the label `Toggle filter`
-    - when clicked, the list of Todos should toggle between ALL todos and only incomplete Todos
+1. At the top of the `TodosList` component, there should be
+    - text that says "Showing [Incomplete / All] Todos for {username}"
+    - a button with the label "Toggle filter"
+    - when clicked, the list of Todos should change between ALL todos and only incomplete Todos
