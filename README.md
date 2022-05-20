@@ -22,6 +22,8 @@ You will be required to follow the specific tasks below to make the tests pass.
 
 ### Mock wireframe
 
+This wireframe is just meant as a visual guide. No styling or layout is required to make the tests pass, only the existence of the correct elements and content.
+
 ![Mock](mock-wire.png "Mock wireframe")
 
 ### Specific Tasks
