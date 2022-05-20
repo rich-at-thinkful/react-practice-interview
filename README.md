@@ -26,7 +26,8 @@ You will be required to follow the specific tasks below to make the tests pass.
 
 ### Specific Tasks
 
-If in doubt about a task, read the `App.test.js` and `TodosList.test.js` to 
+If in doubt about a task, read the `App.test.js` and `TodosList.test.js` to understand what's required to pass.
+
 1. Inside the App component, create two state variables: `users` and `currentUserId`
     - `users` is an Array that should be retrieved from the API at `https://jsonplaceholder.typicode.com/users` when the App component loads
     - `currentUserId` is a Number that starts as `null` and should change when a username is clicked
