@@ -49,15 +49,16 @@ test('renders list of todos when user clicked', async () => {
     }),
   );
 
-  const btns = screen.getAllByText(/Show Todos/);
+  const btns = screen.getAllByText(/Show Todos/i);
   fireEvent.click(btns[1]);
 
   await waitFor(async () => {
     const headers = container.querySelectorAll("h3");
-    const todosHeader = Array.from(headers).find(h => h.textContent.match(/Todos/));
+    const { username } = usersFixtures[1];
+    const todosHeader = Array.from(headers).find(h => h.textContent.match(new RegExp(`${username}'s Todos`, 'i')));
     expect(todosHeader).toBeInTheDocument();
 
     const todos = todosHeader.closest("section").querySelectorAll("li");
-    expect(todos[0].textContent).toMatch(/suscipit repellat esse quibusdam voluptatem incidunt/);
+    expect(todos[0].textContent).toMatch(/suscipit repellat esse quibusdam voluptatem incidunt/i);
   });
 });

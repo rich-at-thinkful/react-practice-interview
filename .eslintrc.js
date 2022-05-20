@@ -24,6 +24,7 @@ module.exports = {
     "function-paren-newline": 0,
     "react/react-in-jsx-scope": 0,
     "react/prop-types": 0,
+    "react/no-unescaped-entities": 0,
     "react/jsx-filename-extension": 0,
     "react/jsx-wrap-multilines": 0,
     "react/jsx-one-expression-per-line": 0,

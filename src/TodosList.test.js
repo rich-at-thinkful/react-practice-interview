@@ -35,11 +35,12 @@ test('renders all todos when toggle clicked', async () => {
   const { container } = render(<TodosList userId={2} />);
 
   await waitFor(async () => {
-    const btn = screen.getByText(/Toggle filter/);
+    const btn = screen.getByText(/Toggle filter/i);
     let todos = container.querySelectorAll("li");
     expect(todos).toHaveLength(3);
     fireEvent.click(btn);
     todos = container.querySelectorAll("li");
     expect(todos).toHaveLength(5);
+    // const label = screen.getByText(/Showing all )
   });
 });

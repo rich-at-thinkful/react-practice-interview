@@ -40,6 +40,7 @@ If in doubt about a task, read the `App.test.js` and `TodosList.test.js` to unde
 1. The `TodosList` component should display ONLY the incomplete todos when it first loads
 1. Each todo should generate a `li` component that contains the `todo.title`
 1. At the top of the `TodosList` component, there should be
-    - text that says "Showing [Incomplete / All] Todos for {username}"
+    - an `h3` element containing text "Todos"
+    - a `p` element containing text "Showing {incomplete or all} Todos for {username}"
     - a button with the label "Toggle filter"
-    - when clicked, the list of Todos should change between ALL todos and only incomplete Todos
+ 1. When the button is clicked, the list of Todos should change between ALL todos and ONLY INCOMPLETE Todos
