@@ -38,9 +38,12 @@ test('renders all todos when toggle clicked', async () => {
     const btn = screen.getByText(/Toggle filter/i);
     let todos = container.querySelectorAll("li");
     expect(todos).toHaveLength(3);
+    let filterLabel = screen.getByText(/Showing incomplete todos/i);
+    expect(filterLabel).toBeInTheDocument();
     fireEvent.click(btn);
     todos = container.querySelectorAll("li");
     expect(todos).toHaveLength(5);
-    // const label = screen.getByText(/Showing all )
+    filterLabel = screen.getByText(/Showing all todos/i);
+    expect(filterLabel).toBeInTheDocument();
   });
 });
