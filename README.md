@@ -2,7 +2,7 @@
 
 ### Installation
 
-* Clone or download this repo to your local machine
+* Clone or download this repo to your local machine (if not using Glitch)
 * Run `npm install` in the project folder
 * Run `npm test` to see the required tests
 * Run `npm start` to start the app
@@ -13,9 +13,11 @@ This is an empty React project generated from `create-react-app`.
 
 To complete this assignment, your app will need to achieve the following:
 
-1. Upon first loading, it will display a list of usernames retrieved from an API, with a button labeled "Show Todos"
+1. Upon first loading, it will display a list of usernames retrieved from an API
+1. Each username will include a button labeled "Show Todos"
 1. When the user clicks on a "Show Todos" button for a specific user, it will add a list of Todos to the display. This will require a second API call for the Todos.
-1. A button labeled "Toggle filter" will toggle between showing only incomplete todos and showing ALL todos.
+1. Only one set of user's todos should be visible at a time.
+1. When Todos are visible, another button labeled "Toggle filter" will be visible. This button toggles between showing only incomplete todos and showing ALL todos.
 1. When the Todos first load, they will default to showing ONLY incomplete todos.
 
 You will be required to follow the specific tasks below to make the tests pass.
@@ -25,6 +27,8 @@ You will be required to follow the specific tasks below to make the tests pass.
 This wireframe is just meant as a visual guide. No styling or layout is required to make the tests pass, only the existence of the correct elements and content.
 
 ![Mock](mock-wire.png "Mock wireframe")
+
+(If viewing in Glitch, you can click the `mock-wire.png` file in the file browser.)
 
 ### Specific Tasks
 
@@ -46,3 +50,4 @@ If in doubt about a task, read the `App.test.js` and `TodosList.test.js` to unde
     - a `p` element containing text "Showing {incomplete or all} Todos"
     - a button with the label "Toggle filter"
  1. When the button is clicked, the list of Todos should change between ALL todos and ONLY INCOMPLETE Todos
+    - hint: remember, all visual changes in your App will require a state variable to exist and change
