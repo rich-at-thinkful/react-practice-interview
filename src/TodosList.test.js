@@ -1,6 +1,8 @@
 import { render, waitFor, fireEvent, screen } from '@testing-library/react';
 import TodosList from './TodosList';
 import todosFixtures from "./todos-fixtures";
+import usersFixtures from "./users-fixtures";
+
 
 afterEach(() => {
   jest.clearAllMocks();
@@ -17,7 +19,7 @@ test('renders incomplete todos', async () => {
     }),
   );
 
-  const { container } = render(<TodosList userId={2} />);
+  const { container } = render(<TodosList currentUser={usersFixtures[1]} />);
 
   await waitFor(async () => {
     const todos = container.querySelectorAll("li");
@@ -32,7 +34,7 @@ test('renders all todos when toggle clicked', async () => {
     }),
   );
 
-  const { container } = render(<TodosList userId={2} />);
+  const { container } = render(<TodosList currentUser={usersFixtures[1]} />);
 
   await waitFor(async () => {
     const btn = screen.getByText(/Toggle filter/i);

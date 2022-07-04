@@ -33,7 +33,7 @@ function App() {
           </section>
         </div>
         <div className="col-9 p-3">
-          {currentUser && <TodosList user={currentUser} />}
+          {currentUser && <TodosList currentUser={currentUser} />}
         </div>
       </div>
     </div>
